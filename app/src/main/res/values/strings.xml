@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Whatsapp-ProfileCollapsingToolbar</string>
+    <string name="last_seen">last seen</string>
+    <string name="name">name</string>
+    <string name="button_submit_text">submit</string>
+    <string name="dot">●</string>
+    <string name="username_hint">شناسه کاربری</string>
+    <string name="phone_number_hint">شماره موبایل</string>
+    <string name="bio_hint">شرح حال</string>
+    <string name="shared_media_text">رسانه ها</string>
+    <string name="all_shared_media">همه</string>
+    <string name="notification_setting">نوتیفیکیشن</string>
+</resources>
