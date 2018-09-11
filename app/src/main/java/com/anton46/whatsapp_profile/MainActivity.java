@@ -31,20 +31,20 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.edit_text_last_seen)
-    protected EditText lastSeenEditText;
+//    @Bind(R.id.edit_text_last_seen)
+//    protected EditText lastSeenEditText;
+//
+//    @Bind(R.id.edit_text_name)
+//    protected EditText nameEditText;
 
-    @Bind(R.id.edit_text_name)
-    protected EditText nameEditText;
-
-    @Bind(R.id.text_view_bio)
-    protected TextView bioTextView;
-
-    @Bind(R.id.text_view_phone_number)
-    protected TextView phoneNumberTextView;
-
-    @Bind(R.id.text_view_username)
-    protected TextView usernameTextView;
+//    @Bind(R.id.text_view_bio)
+//    protected TextView bioTextView;
+//
+//    @Bind(R.id.text_view_phone_number)
+//    protected TextView phoneNumberTextView;
+//
+//    @Bind(R.id.text_view_username)
+//    protected TextView usernameTextView;
 
 //    @Bind(R.id.recycler_view_shared_media)
 //    protected RecyclerView recyclerView;
@@ -67,20 +67,20 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
     }
 
-    private void setProfileInfo() {
-        String username = "@username";
-        String phoneNumber = "09123456789";
-        String bio = "my bio my bio my bio my bio!!!";
-        usernameTextView.setText(username);
-        phoneNumberTextView.setText(phoneNumber);
-        bioTextView.setText(bio);
-    }
-
     private void initUi(String name, String lastSeen) {
         appBarLayout.addOnOffsetChangedListener(this);
 
         toolbarHeaderView.bindTo(name, lastSeen);
         floatHeaderView.bindTo(name, lastSeen);
+    }
+
+    private void setProfileInfo() {
+        String username = "@username";
+        String phoneNumber = "09123456789";
+        String bio = "my bio my bio my bio my bio!!!";
+//        usernameTextView.setText(username);
+//        phoneNumberTextView.setText(phoneNumber);
+//        bioTextView.setText(bio);
     }
 
     @Override
@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
     public void onSubmitClicked(View view) {
-        String name = nameEditText.getText().toString();
-        String lastSeen = lastSeenEditText.getText().toString();
-        initUi(name, lastSeen);
+//        String name = nameEditText.getText().toString();
+//        String lastSeen = lastSeenEditText.getText().toString();
+//        initUi(name, lastSeen);
 //        ArrayList<Media> mediaArrayList = new ArrayList<>();
 //        mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDtIIn3HzDZsOTSP5BYIGBuexMaDHO8evBQx_sy_Hn36Mp5OWjQ"));
 //        mediaArrayList.add(new Media("https://www.skymetweather.com//themes/skymet/images/satellite/insat/thumb-web.jpg?x=1524377804"));
