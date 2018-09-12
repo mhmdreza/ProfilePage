@@ -8,4 +8,5 @@
     <dimen name="header_view_start_margin_bottom">14dp</dimen>
     <dimen name="header_view_start_text_size">32sp</dimen>
     <dimen name="header_view_end_text_size">18sp</dimen>
+    <dimen name="shared_media_recycler_view_item_length">70dp</dimen>
 </resources>

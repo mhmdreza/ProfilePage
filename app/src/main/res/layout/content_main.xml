@@ -33,8 +33,15 @@
         android:layout_width="match_parent"/>
 
     <include layout="@layout/shared_media"
+        android:id="@+id/shared_media"
         android:layout_below="@id/profile_info_layout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"/>
+
+    <include layout="@layout/chat_profile_setting"
+        android:id="@+id/chat_profile_setting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shared_media" />
 
 </RelativeLayout>

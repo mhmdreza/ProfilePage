@@ -10,4 +10,8 @@
     <string name="shared_media_text">رسانه ها</string>
     <string name="all_shared_media">همه</string>
     <string name="notification_setting">نوتیفیکیشن</string>
+    <string name="notification_status_on">فعال</string>
+    <string name="notification_status_off">غیر فعال</string>
+    <string name="delete_chat_history">حذف تاریخچه گفتگو</string>
+    <string name="block_user">مسدود کردن کاربر</string>
 </resources>
