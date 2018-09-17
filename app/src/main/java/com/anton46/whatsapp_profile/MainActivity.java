@@ -1,6 +1,5 @@
 package com.anton46.whatsapp_profile;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -8,10 +7,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anton46.whatsapp_profile.views.group_member.GroupMemberAdapter;
 import com.anton46.whatsapp_profile.views.media.MediaAdapter;
@@ -59,7 +58,15 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     @Bind(R.id.text_view_notification_option)
     protected TextView notificationOptionTextView;
 
-    private MediaAdapter adapter;
+    @Bind(R.id.fab_call)
+    protected FloatingActionButton callFab;
+
+    @Bind(R.id.fab_message)
+    protected FloatingActionButton messageFab;
+
+    @Bind(R.id.fab_add_member)
+    protected FloatingActionButton addMemberFab;
+
     private boolean isHideToolbarView = false;
 
     @Override
@@ -119,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWsnPuWFJJglzJOCdqz4IB-LfkPlad79rE_A8NuhRVWpL76bC"));
         mediaArrayList.add(new Media("https://image-cdn.neatoshop.com/styleimg/67183/none/kiwigreen/default/371936-19;1512965831i.jpg"));
         mediaArrayList.add(new Media("https://dqgroc0ic5iei.cloudfront.net/images/GoestaReiland_DSC01125-CMSTemplate.2e16d0ba.fill-400x400_6Wso0qQ.jpg"));
-        adapter = new MediaAdapter(mediaArrayList);
+        MediaAdapter adapter = new MediaAdapter(mediaArrayList);
         recyclerView.setAdapter(adapter);
         setGroupMemberLayout(mediaArrayList);
     }
@@ -149,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
     public void showAllSharedMedia(View view){
-
+        Toast.makeText(this, "showAllSharedMedia", Toast.LENGTH_SHORT).show();
     }
 
     public void changeNotificationStatus(View view){
@@ -167,9 +174,26 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
     public void blockUser(View view){
-
+        Toast.makeText(this, "blockUser", Toast.LENGTH_SHORT).show();
     }
 
     public void showAllGroupMember(View view){
+        Toast.makeText(this, "showAllGroupMember", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onAddMemberButtonClicked(View view) {
+        Toast.makeText(this, "onAddMemberButtonClicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onGroupButtonClicked(View view){
+        addMemberFab.setVisibility(View.VISIBLE);
+        callFab.setVisibility(View.GONE);
+        messageFab.setVisibility(View.GONE);
+    }
+
+    public void onChatButtonClicked(View view){
+        addMemberFab.setVisibility(View.GONE);
+        callFab.setVisibility(View.VISIBLE);
+        messageFab.setVisibility(View.VISIBLE);
     }
 }

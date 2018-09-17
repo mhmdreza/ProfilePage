@@ -16,4 +16,6 @@
     <string name="block_user">مسدود کردن کاربر</string>
     <string name="group_member_list">لیست اعضای گروه</string>
     <string name="all_group_member">همه</string>
+    <string name="group_profile">Group Profile</string>
+    <string name="chat_profile">chat profile</string>
 </resources>
