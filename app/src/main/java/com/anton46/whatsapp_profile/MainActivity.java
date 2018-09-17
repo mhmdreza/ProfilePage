@@ -1,25 +1,27 @@
 package com.anton46.whatsapp_profile;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.anton46.whatsapp_profile.listeners.MediaListener;
-import com.anton46.whatsapp_profile.views.MediaAdapter;
+import com.anton46.whatsapp_profile.views.group_member.GroupMemberAdapter;
+import com.anton46.whatsapp_profile.views.media.MediaAdapter;
 
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener, MediaListener{
+public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener{
 
     @Bind(R.id.toolbar_header_view)
     protected HeaderView toolbarHeaderView;
@@ -51,8 +53,11 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     @Bind(R.id.recycler_view_shared_media)
     protected RecyclerView recyclerView;
 
+    @Bind(R.id.recycler_view_group_member)
+    protected RecyclerView groupMemberRecyclerView;
+
     @Bind(R.id.text_view_notification_option)
-    protected TextView notifationOptionTextView;
+    protected TextView notificationOptionTextView;
 
     private MediaAdapter adapter;
     private boolean isHideToolbarView = false;
@@ -62,19 +67,16 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         String name = "Larry Page";
         String lastSeen = "Last seen today at 7.00PM";
         initUi(name, lastSeen);
         setProfileInfo();
-
     }
 
     private void initUi(String name, String lastSeen) {
         appBarLayout.addOnOffsetChangedListener(this);
-
         toolbarHeaderView.bindTo(name, lastSeen);
         floatHeaderView.bindTo(name, lastSeen);
     }
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         String lastSeen = lastSeenEditText.getText().toString();
         initUi(name, lastSeen);
         ArrayList<Media> mediaArrayList = new ArrayList<>();
-        mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDtIIn3HzDZsOTSP5BYIGBuexMaDHO8evBQx_sy_Hn36Mp5OWjQ"));
+        mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9S1cddQSI1jovslj7jvSg6EFjOsn0d8O6QHsMOxKr3iOHPrrV"));
         mediaArrayList.add(new Media("https://www.skymetweather.com//themes/skymet/images/satellite/insat/thumb-web.jpg?x=1524377804"));
         mediaArrayList.add(new Media("https://www.zimbabweflora.co.zw/speciesdata/images/11/112960-2.jpg"));
         mediaArrayList.add(new Media("https://www.expertafrica.com/images/area/868_l.jpg"));
@@ -117,34 +119,46 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWsnPuWFJJglzJOCdqz4IB-LfkPlad79rE_A8NuhRVWpL76bC"));
         mediaArrayList.add(new Media("https://image-cdn.neatoshop.com/styleimg/67183/none/kiwigreen/default/371936-19;1512965831i.jpg"));
         mediaArrayList.add(new Media("https://dqgroc0ic5iei.cloudfront.net/images/GoestaReiland_DSC01125-CMSTemplate.2e16d0ba.fill-400x400_6Wso0qQ.jpg"));
-        adapter = new MediaAdapter(mediaArrayList, this);
+        adapter = new MediaAdapter(mediaArrayList);
         recyclerView.setAdapter(adapter);
+        setGroupMemberLayout(mediaArrayList);
     }
 
-    public void onMessageButtonClicked(View view) {
-
+    private void setGroupMemberLayout(ArrayList<Media> mediaArrayList) {
+        ArrayList<GroupMember> memberArrayList = new ArrayList<>();
+        memberArrayList.add(new GroupMember("ali", "online", mediaArrayList.get(0), true));
+        memberArrayList.add(new GroupMember("ali zdmdgfxcv", "7 minutes ago", mediaArrayList.get(1), false));
+        memberArrayList.add(new GroupMember("ali sdt", "today 17:45", mediaArrayList.get(2), false));
+        memberArrayList.add(new GroupMember("alixvfb f ", "yesterday 12:33", mediaArrayList.get(3), true));
+        memberArrayList.add(new GroupMember("ali zvdglrxclv", "2018/11/11 11:11", mediaArrayList.get(4), false));
+        memberArrayList.add(new GroupMember("ali xvc fbdb", "online", mediaArrayList.get(5), false));
+        memberArrayList.add(new GroupMember("ali rogl; fobk;fldb, f", "10 minasdfg", mediaArrayList.get(6), false));
+        memberArrayList.add(new GroupMember("ali dzsgr dfg;l, ldf", "online", mediaArrayList.get(7), true));
+        memberArrayList.add(new GroupMember("ali dfmgdf l;bfd", "online", mediaArrayList.get(8), false));
+        GroupMemberAdapter adapter = new GroupMemberAdapter(memberArrayList);
+        groupMemberRecyclerView.setAdapter(adapter);
     }
 
     public void onCallButtonClicked(View view) {
+        Snackbar.make(view, "Call", Snackbar.LENGTH_SHORT).show();
+    }
 
+    public void onMessageButtonClicked(View view) {
+        Snackbar.make(view, "Message", Snackbar.LENGTH_SHORT)
+                .setAction("Action", null).show();
     }
 
     public void showAllSharedMedia(View view){
 
     }
 
-    @Override
-    public void onClick(View view, int position) {
-
-    }
-
     public void changeNotificationStatus(View view){
-        String option = notifationOptionTextView.getText().toString();
+        String option = notificationOptionTextView.getText().toString();
         if(option.equals(getString(R.string.notification_status_on))){
-            notifationOptionTextView.setText(R.string.notification_status_off);
+            notificationOptionTextView.setText(R.string.notification_status_off);
         }
         else {
-            notifationOptionTextView.setText(R.string.notification_status_on);
+            notificationOptionTextView.setText(R.string.notification_status_on);
         }
     }
 
@@ -154,5 +168,8 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
     public void blockUser(View view){
 
+    }
+
+    public void showAllGroupMember(View view){
     }
 }

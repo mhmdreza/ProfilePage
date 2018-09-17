@@ -44,4 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/shared_media" />
 
+    <include layout="@layout/group_member_layout"
+        android:id="@+id/group_member_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chat_profile_setting_layout"/>
+
 </RelativeLayout>

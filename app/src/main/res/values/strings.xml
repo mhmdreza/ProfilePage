@@ -14,4 +14,6 @@
     <string name="notification_status_off">غیر فعال</string>
     <string name="delete_chat_history">حذف تاریخچه گفتگو</string>
     <string name="block_user">مسدود کردن کاربر</string>
+    <string name="group_member_list">لیست اعضای گروه</string>
+    <string name="all_group_member">همه</string>
 </resources>
