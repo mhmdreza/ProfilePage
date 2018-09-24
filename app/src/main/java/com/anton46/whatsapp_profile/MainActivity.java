@@ -1,5 +1,6 @@
 package com.anton46.whatsapp_profile;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -193,12 +194,14 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         Toast.makeText(this, "onAddMemberButtonClicked", Toast.LENGTH_SHORT).show();
     }
 
+    @SuppressLint("RestrictedApi")
     public void onGroupButtonClicked(View view){
         addMemberFab.setVisibility(View.VISIBLE);
         callFab.setVisibility(View.GONE);
         messageFab.setVisibility(View.GONE);
     }
 
+    @SuppressLint("RestrictedApi")
     public void onChatButtonClicked(View view){
         addMemberFab.setVisibility(View.GONE);
         callFab.setVisibility(View.VISIBLE);
