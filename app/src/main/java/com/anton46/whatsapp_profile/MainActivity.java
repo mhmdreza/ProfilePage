@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anton46.whatsapp_profile.views.group_member.GroupMemberAdapter;
+import com.anton46.whatsapp_profile.views.group_member.GroupMemberViewModel;
 import com.anton46.whatsapp_profile.views.media.MediaAdapter;
+import com.anton46.whatsapp_profile.views.media.MediaViewModel;
 
 import java.util.ArrayList;
 
@@ -75,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         String name = "Larry Page";
         String lastSeen = "Last seen today at 7.00PM";
         initUi(name, lastSeen);
@@ -116,34 +120,38 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         String name = nameEditText.getText().toString();
         String lastSeen = lastSeenEditText.getText().toString();
         initUi(name, lastSeen);
-        ArrayList<Media> mediaArrayList = new ArrayList<>();
-        mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9S1cddQSI1jovslj7jvSg6EFjOsn0d8O6QHsMOxKr3iOHPrrV"));
-        mediaArrayList.add(new Media("https://www.skymetweather.com//themes/skymet/images/satellite/insat/thumb-web.jpg?x=1524377804"));
-        mediaArrayList.add(new Media("https://www.zimbabweflora.co.zw/speciesdata/images/11/112960-2.jpg"));
-        mediaArrayList.add(new Media("https://www.expertafrica.com/images/area/868_l.jpg"));
-        mediaArrayList.add(new Media("https://www.malawi-music.com/images/albums/pangono.jpg"));
-        mediaArrayList.add(new Media("http://www.diveworldwide.com/images/products/shark_diving_species_whale_shark.jpg"));
-        mediaArrayList.add(new Media("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWsnPuWFJJglzJOCdqz4IB-LfkPlad79rE_A8NuhRVWpL76bC"));
-        mediaArrayList.add(new Media("https://image-cdn.neatoshop.com/styleimg/67183/none/kiwigreen/default/371936-19;1512965831i.jpg"));
-        mediaArrayList.add(new Media("https://dqgroc0ic5iei.cloudfront.net/images/GoestaReiland_DSC01125-CMSTemplate.2e16d0ba.fill-400x400_6Wso0qQ.jpg"));
+        ArrayList<MediaViewModel> mediaArrayList = new ArrayList<>();
         MediaAdapter adapter = new MediaAdapter(mediaArrayList);
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
+        mediaArrayList.add(new MediaViewModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9S1cddQSI1jovslj7jvSg6EFjOsn0d8O6QHsMOxKr3iOHPrrV"));
+        mediaArrayList.add(new MediaViewModel("https://www.skymetweather.com//themes/skymet/images/satellite/insat/thumb-web.jpg?x=1524377804"));
+        mediaArrayList.add(new MediaViewModel("https://www.zimbabweflora.co.zw/speciesdata/images/11/112960-2.jpg"));
+        mediaArrayList.add(new MediaViewModel("https://www.expertafrica.com/images/area/868_l.jpg"));
+        mediaArrayList.add(new MediaViewModel("https://www.malawi-music.com/images/albums/pangono.jpg"));
+        mediaArrayList.add(new MediaViewModel("http://www.diveworldwide.com/images/products/shark_diving_species_whale_shark.jpg"));
+        mediaArrayList.add(new MediaViewModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWsnPuWFJJglzJOCdqz4IB-LfkPlad79rE_A8NuhRVWpL76bC"));
+        mediaArrayList.add(new MediaViewModel("https://image-cdn.neatoshop.com/styleimg/67183/none/kiwigreen/default/371936-19;1512965831i.jpg"));
+        mediaArrayList.add(new MediaViewModel("https://dqgroc0ic5iei.cloudfront.net/images/GoestaReiland_DSC01125-CMSTemplate.2e16d0ba.fill-400x400_6Wso0qQ.jpg"));
+        adapter.notifyDataSetChanged();
         setGroupMemberLayout(mediaArrayList);
     }
 
-    private void setGroupMemberLayout(ArrayList<Media> mediaArrayList) {
-        ArrayList<GroupMember> memberArrayList = new ArrayList<>();
-        memberArrayList.add(new GroupMember("ali", "online", mediaArrayList.get(0), true));
-        memberArrayList.add(new GroupMember("ali zdmdgfxcv", "7 minutes ago", mediaArrayList.get(1), false));
-        memberArrayList.add(new GroupMember("ali sdt", "today 17:45", mediaArrayList.get(2), false));
-        memberArrayList.add(new GroupMember("alixvfb f ", "yesterday 12:33", mediaArrayList.get(3), true));
-        memberArrayList.add(new GroupMember("ali zvdglrxclv", "2018/11/11 11:11", mediaArrayList.get(4), false));
-        memberArrayList.add(new GroupMember("ali xvc fbdb", "online", mediaArrayList.get(5), false));
-        memberArrayList.add(new GroupMember("ali rogl; fobk;fldb, f", "10 minasdfg", mediaArrayList.get(6), false));
-        memberArrayList.add(new GroupMember("ali dzsgr dfg;l, ldf", "online", mediaArrayList.get(7), true));
-        memberArrayList.add(new GroupMember("ali dfmgdf l;bfd", "online", mediaArrayList.get(8), false));
+    private void setGroupMemberLayout(ArrayList<MediaViewModel> mediaArrayList) {
+        ArrayList<GroupMemberViewModel> memberArrayList = new ArrayList<>();
         GroupMemberAdapter adapter = new GroupMemberAdapter(memberArrayList);
+        groupMemberRecyclerView.setNestedScrollingEnabled(false);
         groupMemberRecyclerView.setAdapter(adapter);
+        memberArrayList.add(new GroupMemberViewModel("ali", "online", mediaArrayList.get(0), true));
+        memberArrayList.add(new GroupMemberViewModel("ali zdmdgfxcv", "7 minutes ago", mediaArrayList.get(1), false));
+        memberArrayList.add(new GroupMemberViewModel("ali sdt", "today 17:45", mediaArrayList.get(2), false));
+        memberArrayList.add(new GroupMemberViewModel("alixvfb f ", "yesterday 12:33", mediaArrayList.get(3), true));
+        memberArrayList.add(new GroupMemberViewModel("ali zvdglrxclv", "2018/11/11 11:11", mediaArrayList.get(4), false));
+        memberArrayList.add(new GroupMemberViewModel("ali xvc fbdb", "online", mediaArrayList.get(5), false));
+        memberArrayList.add(new GroupMemberViewModel("ali rogl; fobk;fldb, f", "10 minasdfg", mediaArrayList.get(6), false));
+        memberArrayList.add(new GroupMemberViewModel("ali dzsgr dfg;l, ldf", "online", mediaArrayList.get(7), true));
+        memberArrayList.add(new GroupMemberViewModel("ali dfmgdf l;bfd", "online", mediaArrayList.get(8), false));
+        adapter.notifyDataSetChanged();
     }
 
     public void onCallButtonClicked(View view) {
@@ -170,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     }
 
     public void clearChatHistory(View view){
-
+        Toast.makeText(this, "clearChatHistory", Toast.LENGTH_SHORT).show();
     }
 
     public void blockUser(View view){

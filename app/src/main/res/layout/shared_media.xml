@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/text_view_shared_media"
-        android:text="@string/shared_media_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_alignParentEnd="true"/>
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="@string/shared_media_text"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/all_shared_media"
-        android:onClick="showAllSharedMedia"
-        android:textColor="@color/blue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_alignParentStart="true"/>
+        android:onClick="showAllSharedMedia"
+        android:text="@string/all_shared_media"
+        android:textColor="@color/blue" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_shared_media"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_shared_media"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:orientation="horizontal"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
-        app:reverseLayout="true"
-        android:layout_below="@id/text_view_shared_media"
-        android:id="@+id/recycler_view_shared_media"
-        android:layout_margin="@dimen/activity_horizontal_margin"/>
+        app:reverseLayout="true" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/recycler_view_shared_media"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:background="@color/darker_gray"/>
+        android:background="@color/darker_gray" />
 
 </RelativeLayout>

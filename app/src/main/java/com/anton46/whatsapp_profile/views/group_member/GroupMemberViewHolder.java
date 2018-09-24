@@ -5,16 +5,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.anton46.whatsapp_profile.GroupMember;
-import com.anton46.whatsapp_profile.Media;
 import com.anton46.whatsapp_profile.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 public class GroupMemberViewHolder extends RecyclerView.ViewHolder {
     private ImageView groupMemberImageView;
-    private TextView  groupMemberNameTextView;
-    private TextView  groupMemberLastSeenTextView;
+    private TextView groupMemberNameTextView;
+    private TextView groupMemberLastSeenTextView;
     private ImageView adminImageView;
 
     public GroupMemberViewHolder(View itemView) {
@@ -31,14 +29,14 @@ public class GroupMemberViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    public void setData(GroupMember member){
+    public void setData(GroupMemberViewModel member) {
         groupMemberNameTextView.setText(member.getName());
         groupMemberLastSeenTextView.setText(member.getLastSeen());
         Glide.with(itemView.getContext())
                 .load(member.getProfilePicture().getUrl())
                 .apply(new RequestOptions().circleCrop())
                 .into(groupMemberImageView);
-        if(member.isAdmin()){
+        if (member.isAdmin()) {
             adminImageView.setVisibility(View.VISIBLE);
             adminImageView.bringToFront();
         }

@@ -5,15 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.anton46.whatsapp_profile.Media;
 import com.anton46.whatsapp_profile.R;
 
 import java.util.ArrayList;
 
 public class MediaAdapter extends RecyclerView.Adapter<MediaViewHolder> {
-    private ArrayList<Media> list;
+    private ArrayList<MediaViewModel> list;
 
-    public MediaAdapter(ArrayList<Media> list) {
+    public MediaAdapter(ArrayList<MediaViewModel> list) {
         this.list = list;
     }
 
@@ -25,8 +24,8 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaViewHolder> {
 
     @Override
     public void onBindViewHolder(MediaViewHolder holder, int position) {
-        Media media = list.get(position);
-        holder.setMedia(media.getUrl());
+        MediaViewModel media = list.get(position);
+        holder.onBindViewModel(media.getUrl());
     }
 
     @Override

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/image_view_media_card"
         android:layout_width="@dimen/shared_media_recycler_view_item_length"
         android:layout_height="@dimen/shared_media_recycler_view_item_length"
-        android:id="@+id/image_view_media_card"
+        android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
-        android:src="@drawable/media_card_background"/>
+        android:contentDescription="image_view_media_card"
+        android:src="@drawable/media_card_background"
+        tools:ignore="HardcodedText" />
 
-</RelativeLayout>
+</LinearLayout>
