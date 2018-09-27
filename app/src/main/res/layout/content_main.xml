@@ -26,26 +26,6 @@
         android:onClick="onSubmitClicked"
         android:text="@string/button_submit_text" />
 
-    <Button
-        android:id="@+id/button_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_last_seen"
-        android:layout_toEndOf="@id/button_submit"
-        android:layout_toRightOf="@id/button_submit"
-        android:onClick="onGroupButtonClicked"
-        android:text="@string/group_profile" />
-
-    <Button
-        android:id="@+id/button_chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_last_seen"
-        android:layout_toEndOf="@id/button_group"
-        android:layout_toRightOf="@id/button_group"
-        android:onClick="onChatButtonClicked"
-        android:text="@string/chat_profile" />
-
     <include
         android:id="@+id/profile_info_layout"
         layout="@layout/chat_profile_info"

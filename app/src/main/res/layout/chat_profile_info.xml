@@ -121,11 +121,4 @@
         android:layout_toStartOf="@id/bio_dot"
         android:text="@string/bio_hint" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/text_view_bio_hint"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:background="@color/darker_gray" />
-
 </RelativeLayout>

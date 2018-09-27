@@ -1,4 +1,4 @@
-package com.anton46.whatsapp_profile.views.group_member;
+package com.anton46.whatsapp_profile.views.group_member.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anton46.whatsapp_profile.R;
+import com.anton46.whatsapp_profile.views.group_member.viewModel.GroupMemberViewModel;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 

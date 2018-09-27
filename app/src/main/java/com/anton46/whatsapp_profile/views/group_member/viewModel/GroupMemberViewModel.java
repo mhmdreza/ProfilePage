@@ -1,7 +1,7 @@
-package com.anton46.whatsapp_profile.views.group_member;
+package com.anton46.whatsapp_profile.views.group_member.viewModel;
 
 
-import com.anton46.whatsapp_profile.views.media.MediaViewModel;
+import com.anton46.whatsapp_profile.views.media.viewModel.MediaViewModel;
 
 public class GroupMemberViewModel {
     private String name;

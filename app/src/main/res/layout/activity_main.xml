@@ -18,7 +18,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -69,20 +69,22 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/content_main" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_main" />
 
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_call"
+        android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:onClick="onCallButtonClicked"
-        android:src="@drawable/ic_call"
+        android:onClick="onFirstFabClicked"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end|right" />
+        app:layout_anchorGravity="bottom|start|left" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_message"
@@ -93,18 +95,6 @@
         android:onClick="onMessageButtonClicked"
         android:src="@drawable/ic_message"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end|right" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_add_member"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:onClick="onAddMemberButtonClicked"
-        android:src="@drawable/ic_add_member"
-        android:visibility="gone"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end|right" />
+        app:layout_anchorGravity="bottom|start|left" />
 
 </android.support.design.widget.CoordinatorLayout>

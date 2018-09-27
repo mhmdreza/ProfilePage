@@ -1,4 +1,4 @@
-package com.anton46.whatsapp_profile.views.media;
+package com.anton46.whatsapp_profile.views.media.viewModel;
 
 public class MediaViewModel {
     private String url;

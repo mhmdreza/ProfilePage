@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anton46.whatsapp_profile.R;
+import com.anton46.whatsapp_profile.views.group_member.viewHolder.GroupMemberViewHolder;
+import com.anton46.whatsapp_profile.views.group_member.viewModel.GroupMemberViewModel;
 
 import java.util.ArrayList;
 

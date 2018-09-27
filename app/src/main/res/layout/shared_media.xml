@@ -35,14 +35,9 @@
         android:layout_below="@id/text_view_shared_media"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
         app:reverseLayout="true" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/recycler_view_shared_media"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:background="@color/darker_gray" />
 
 </RelativeLayout>

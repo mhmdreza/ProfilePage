@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/text_view_group_member_name"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_view_group_member_card"
         android:layout_centerHorizontal="true"
@@ -37,7 +37,7 @@
 
     <TextView
         android:id="@+id/text_view_group_member_last_seen"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_group_member_name"
         android:ellipsize="end"

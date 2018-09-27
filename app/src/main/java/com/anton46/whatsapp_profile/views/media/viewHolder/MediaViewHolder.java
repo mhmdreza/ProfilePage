@@ -1,4 +1,4 @@
-package com.anton46.whatsapp_profile.views.media;
+package com.anton46.whatsapp_profile.views.media.viewHolder;
 
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
@@ -20,7 +20,7 @@ public class MediaViewHolder extends RecyclerView.ViewHolder{
     private ImageView mediaImageView;
     private String url = null;
 
-    MediaViewHolder(final View itemView) {
+    public MediaViewHolder(final View itemView) {
         super(itemView);
         mediaImageView = itemView.findViewById(IMAGE_VIEW_MEDIA_CARD);
         mediaImageView.setBackgroundResource(MEDIA_CARD_BACKGROUND);

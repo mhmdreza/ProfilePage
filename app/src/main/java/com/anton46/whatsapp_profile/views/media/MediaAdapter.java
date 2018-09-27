@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anton46.whatsapp_profile.R;
+import com.anton46.whatsapp_profile.views.media.viewHolder.MediaViewHolder;
+import com.anton46.whatsapp_profile.views.media.viewModel.MediaViewModel;
 
 import java.util.ArrayList;
 
