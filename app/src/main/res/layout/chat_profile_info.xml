@@ -11,9 +11,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:textColor="@color/blue"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView
@@ -24,8 +23,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignTop="@id/text_view_username"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@id/text_view_username"
         android:layout_toStartOf="@id/text_view_username"
         android:gravity="center"
@@ -38,11 +37,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@id/username_dot"
         android:layout_toStartOf="@id/username_dot"
-        android:text="@string/username_hint" />
+        android:text="@string/username_hint"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/text_view_phone_number"
@@ -51,8 +51,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/text_view_username"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="15dp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView
@@ -63,8 +63,8 @@
         android:layout_alignTop="@id/text_view_phone_number"
         android:layout_below="@id/text_view_username"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@id/text_view_phone_number"
         android:layout_toStartOf="@id/text_view_phone_number"
         android:gravity="center"
@@ -77,11 +77,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_username"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="17dp"
         android:layout_toLeftOf="@id/phone_number_dot"
         android:layout_toStartOf="@id/phone_number_dot"
-        android:text="@string/phone_number_hint" />
+        android:text="@string/phone_number_hint"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/text_view_bio"
@@ -90,8 +92,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/text_view_phone_number"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+        android:layout_marginTop="8dp"
+        android:textSize="13sp" />
 
     <TextView
         android:id="@+id/bio_dot"
@@ -101,8 +103,8 @@
         android:layout_alignTop="@id/text_view_bio"
         android:layout_below="@id/text_view_phone_number"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@id/text_view_bio"
         android:layout_toStartOf="@id/text_view_bio"
         android:gravity="center"
@@ -115,10 +117,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_phone_number"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="9dp"
         android:layout_toLeftOf="@id/bio_dot"
         android:layout_toStartOf="@id/bio_dot"
-        android:text="@string/bio_hint" />
+        android:text="@string/bio_hint"
+        android:textSize="12sp" />
 
 </RelativeLayout>

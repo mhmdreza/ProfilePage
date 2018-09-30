@@ -13,6 +13,8 @@ import com.anton46.whatsapp_profile.views.media.MediaAdapter;
 import com.anton46.whatsapp_profile.views.media.viewModel.MediaViewModel;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * A simple {@link Fragment} subclass.

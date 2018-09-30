@@ -9,20 +9,49 @@
     <include
         layout="@layout/chat_profile_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="25dp" />
 
-    <include layout="@layout/line" />
+    <include
+        layout="@layout/line"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
 
     <include
         layout="@layout/shared_media"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="7dp" />
 
-    <include layout="@layout/line" />
+    <include
+        layout="@layout/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="19dp" />
 
     <include
         layout="@layout/chat_profile_setting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="19dp" />
 
 </LinearLayout>

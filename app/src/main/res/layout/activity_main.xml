@@ -18,7 +18,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="190dp"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -70,9 +70,9 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <FrameLayout
+            android:id="@+id/fragment_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fragment_main" />
+            android:layout_height="wrap_content" />
 
     </android.support.v4.widget.NestedScrollView>
 
@@ -80,8 +80,9 @@
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/blue"
         android:onClick="onFirstFabClicked"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom|start|left" />
@@ -90,8 +91,9 @@
         android:id="@+id/fab_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:background="@color/blue"
         android:onClick="onMessageButtonClicked"
         android:src="@drawable/ic_message"
         app:layout_anchor="@id/appbar"
